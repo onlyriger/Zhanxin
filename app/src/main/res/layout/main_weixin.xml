@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/mainweixin"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/main_bottom"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/bottom_bar">
 
 
         <ImageView
+            android:id="@+id/img_tab_now"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="matrix"
             android:layout_gravity="bottom"
             android:layout_alignParentBottom="true"
-            android:id="@+id/img_tab_now"/>
+            android:src="@drawable/tab_bg"/>
+
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="2dp">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -35,7 +40,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/img_weixin"/>
+                    android:id="@+id/img_weixin"
+                    android:scaleType="matrix"
+                    android:clickable="true"
+                    android:src="@drawable/tab_weixin_pressed"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -55,7 +63,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/img_address"/>
+                    android:id="@+id/img_address"
+                    android:scaleType="matrix"
+                    android:clickable="true"
+                    android:src="@drawable/tab_address_normal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -76,7 +87,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/img_friends"/>
+                    android:id="@+id/img_friends"
+                    android:scaleType="matrix"
+                    android:clickable="true"
+                    android:src="@drawable/tab_find_frd_normal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -93,10 +107,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/img_settings"/>
+                    android:id="@+id/img_settings"
+                    android:scaleType="matrix"
+                    android:clickable="true"
+                    android:src="@drawable/tab_settings_normal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
