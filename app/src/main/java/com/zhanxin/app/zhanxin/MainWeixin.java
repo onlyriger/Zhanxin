@@ -33,7 +33,7 @@ public class MainWeixin extends Activity {
     private ImageView mTab1,mTab2,mTab3,mTab4;
     private int zero = 0;           //动画图片偏移量
     private int currIndex = 0;      //当前页卡编号
-    private int one;
+    private int one;                //单个水平动画位移
     private int two;
     private int three;
     private LinearLayout mClose;
@@ -45,6 +45,8 @@ public class MainWeixin extends Activity {
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.main_weixin);
+        // 启动activity时不自动弹出软键盘
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         instance = this;
         mTabPager = (ViewPager)findViewById(R.id.tabpager);
@@ -229,7 +231,7 @@ public class MainWeixin extends Activity {
                 menuWindow = new PopupWindow(layout, ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
                 //menuWindow.showAsDropDown(layout);    //设置弹出效果
                 //menuWindow.showAsDropDown(null,0,layout.getHeight());
-                menuWindow.showAtLocation(this.findViewById(R.id.MainWeixin),
+                menuWindow.showAtLocation(this.findViewById(R.id.mainweixin),
                         Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL,0,0);    //设置layout在PopupWindow中显示的位置
                 //获取main控件
                 mClose = (LinearLayout)layout.findViewById(R.id.menu_close);
@@ -260,26 +262,26 @@ public class MainWeixin extends Activity {
     }
 
     //设置标题栏右侧按钮的作用
-    public void btnmainright(View v){
+    public void btnmainright(View v){   //
         Intent intent = new Intent(MainWeixin.this,MainTopRightDialog.class);
         startActivity(intent);
         //Toast.makeText(getApplicationContext(),"单击了功能按钮”,
         //Toast.LENGTH_LONG.show();
     }
 
-    public void startchat(View v){
+    public void startchat(View v){  //小黑对话界面
         Intent intent = new Intent(MainWeixin.this,ChatActivity.class);
         startActivity(intent);
         //Toast.makeText(getApplicationContext(),"登录成功",
         //Toast.LENGTH_LONG.show();
     }
 
-    public void exit_settings(View v){
+    public void exit_settings(View v){  //退出伪对话框，其实是一个Activity
         Intent intent = new Intent(MainWeixin.this,ExitFromSettings.class);
         startActivity(intent);
     }
 
-    public void btn_shake(View v){
+    public void btn_shake(View v){  //手机摇一摇
         Intent intent = new Intent(MainWeixin.this,ShakeActivity.class);
         startActivity(intent);
     }
